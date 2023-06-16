@@ -2,22 +2,5 @@
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
 # Ensure wildcards in globs match dotfiles too.
-shopt -s dotglob
-
-BUILD_DIR=${1:-}
-CACHE_DIR=${2:-}
-ENV_DIR=${3:-}
-
-if [ -f $ENV_DIR/PROJECT_PATH ]; then
-	PROJECT_PATH=`cat $ENV_DIR/PROJECT_PATH`
-	if [ -d $BUILD_DIR/$PROJECT_PATH ]; then
-		echo "-----> Create Node Symlink"
-		ln -s /usr/bin/nodejs /usr/bin/node
-		exit 0
-	fi
-fi
-
-echo "PROJECT_PATH is undefined"
-exit 1
-
+ln -s /usr/bin/nodejs /usr/bin/node
 
