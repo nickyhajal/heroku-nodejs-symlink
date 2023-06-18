@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# bin/compile <build-dir> <cache-dir> <env-dir>
 
-# Ensure wildcards in globs match dotfiles too.
-ln -s /usr/bin/nodejs /usr/bin/node
+BUILD_DIR=$1
 
+ln -s $BUILD_DIR/.heroku/node/bin/nodejs $BUILD_DIR/.heroku/node/bin/node
